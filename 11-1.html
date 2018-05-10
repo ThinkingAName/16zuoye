@@ -1,0 +1,163 @@
+<!doctype html>               <!--申明html文档-->
+<html>
+ <head>
+  <meta charset="utf-8">      <!--字符编码为国际编码-->
+  <meta name="Author" content="52期学院——不懂就问">    <!--网页创建者-->
+  <meta name="Keywords" content="作业，练习题">         <!--供搜索引擎搜索匹配的关键-->
+  <meta name="description" content="课后练习题作业，熟悉课堂学习操作">  <!--在搜索有结果页面显示的网页描述-->
+  <title>11-1次课后作业</title>   <!--网页标题-->  
+  <style>
+	body,ul,p{
+		margin:0;
+	}
+	ul{
+		padding-left:0;
+		list-style:none;
+	}
+	a{
+		color:#000;
+		text-decoration:none;
+	}
+	div{
+		width:1000px;
+		margin:0 auto;
+	}
+	div li{
+		float:left;
+		
+	}
+	.nav-bar{
+		border:1px solid #ccc;
+		font-size:22px;
+	}
+	.nav-bar li a{
+		display:block;
+		padding:10px 100px;
+	}
+	.clearfloat:after{
+		display:block;
+		content:"";
+		clear:both;
+	}
+	.flower-list{
+		margin-top:15px;
+		font-size:0;
+	}
+	.flower-list li{
+		padding:10px 20px;
+		margin:0 20px 20px 20px;
+		border:1px solid #ccc;
+		font-size:20px;
+		line-height:2em;
+	}
+	  span{
+		  color: crimson;
+	  }
+
+  </style>
+ </head>
+ <body>
+	<div>
+		<button>按价格降序</button>
+		<button>按价格升序</button>
+		<ul class="nav-bar clearfloat">
+			<li>
+				<a href="#">流行</a>
+			</li>
+			<li>
+				<a href="#">热销</a>
+			</li>
+			<li>
+				<a href="#">上新</a>
+			</li>
+			<li>
+				<a href="#">价格</a>
+			</li>
+			
+		</ul>
+		<ul class="flower-list clearfloat">
+			<li>
+				<a href="#">
+					<img src="images/xh_img2.jpg" width="400" height="400" alt="鲜花">
+					<p>深红色经典玫瑰</p><span>90</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/xh_img3.jpg" width="400" height="400" alt="鲜花">
+					<p>粉色玫瑰浪漫系列</p><span>44</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/xh_img4.jpg" width="400" height="400" alt="鲜花">
+					<p>清淡优雅百年合</p><span>65</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/xh_img5.jpg" width="400" height="400" alt="鲜花">
+					<p>紫色冷艳系</p><span>85</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/xh_img6.jpg" width="400" height="400" alt="鲜花">
+					<p>红玫瑰</p><span>20</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/xh_img7.jpg" width="400" height="400" alt="鲜花">
+					<p>蓝色妖姬</p><span>30</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/xh_img8.jpg" width="400" height="400" alt="鲜花">
+					<p>粉红女郎系列</p><span>50</span>
+				</a>
+
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/xh_img2.jpg" width="400" height="400" alt="鲜花">
+					<p>郁金香系列</p><span>10</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+<script>
+	var item = document.querySelectorAll(".flower-list li"),
+    	desc = document.getElementsByTagName("button")[0],
+		asc = document.getElementsByTagName("button")[1];
+    var itemPri = [];
+		console.log(item);
+	for (var k = 0;k<item.length;k++) {
+        itemPri[k] = item[k].querySelectorAll("a span");
+        //console.log(itemPri);
+	}
+
+	desc.onclick = function () {
+	    for (var i = item.length-1; i > 0 ;i--) {
+            // var  item1 = item[i].querySelectorAll("a span"),
+				//  item1 = item[i].querySelectorAll("a span");
+			for (var j = 0;j < i;j++) {
+
+			   var num1 = parseFloat(itemPri[j].innerHTML),
+				   num2 = parseFloat(itemPri[j+1].innerHTML),
+				   str;
+				if (num1 < num2) {
+				    str = item[j+1].innerHTML;
+					item[j+1].innerHTML = item[j].innerHTML;
+					item[j].innerHTML = str;
+				}
+			}
+		}
+
+	}
+
+
+</script>
+ </body>
+</html>
