@@ -135,24 +135,13 @@
 	var item = document.querySelectorAll(".flower-list li"),
         desc = document.getElementsByTagName("button")[0],
         asc = document.getElementsByTagName("button")[1],
-        itemPri = [];
-    for (var k = 0;k<item.length;k++) {
-        itemPri[k] = item[k].querySelectorAll("a span")[0];
-        //console.log(itemPri);
-        //itemPri[]
-    }
-    console.log(item);
+        itemPri =document.querySelectorAll("a span");
 	function getOperate() {
 			item = document.querySelectorAll(".flower-list li"),
-            desc = document.getElementsByTagName("button")[0],
-            asc = document.getElementsByTagName("button")[1],
-            itemPri = [];
+			itemPri =document.querySelectorAll("a span");
         //console.log(item);
-        for (var k = 0;k<item.length;k++) {
-            itemPri[k] = item[k].querySelectorAll("a span")[0];
-            //console.log(itemPri);
-            //itemPri[]
-        }
+        //console.log(itemPri);
+
 	}
 	// 实现按价格降序排列
 	desc.onclick = function () {
